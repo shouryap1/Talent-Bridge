@@ -3,6 +3,10 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
 export default defineConfig({
+  optimizeDeps: {
+    exclude: ['js-big-decimal']
+  }
+,
   server: {
     proxy: {
       "/api": {
@@ -19,6 +23,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  
 })
 
 // https://vitejs.dev/config/

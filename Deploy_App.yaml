@@ -1,0 +1,15 @@
+---
+- name: Pull Docker Image of Calculator
+  hosts: all
+
+  tasks:
+    - name: Start K8s
+      service:
+        name: K8s
+        state: started
+
+    - name: Clone the repository
+      shell: git clone https://github.com/shouryap1/Talent-Bridge.git && cd Talent-Bridge
+
+    - name: Run
+      shell: kubectl apply -f kub/

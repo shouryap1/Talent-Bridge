@@ -84,5 +84,14 @@ pipeline {
                 '''
             }
         }
+        stage("Stage 8: Ansible"){
+            steps{
+                sh'''
+                 cd Talent-Bridge
+                 ansible-playbook -i inventory Deploy_App.yaml
+                 '''
+            }
+
+        }
     }
 }
